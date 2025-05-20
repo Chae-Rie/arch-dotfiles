@@ -1,12 +1,13 @@
 return {
   "mfussenegger/nvim-dap",
+  enabled = false,
   config = function()
     -- NOTE: Check out this for guide
     -- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
-    local dap = require "dap"
+    local dap = require("dap")
     vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
 
-    local dapui = require "dapui"
+    local dapui = require("dapui")
     dap.listeners.after.event_initialized["dapui_config"] = function()
       dapui.open()
     end
@@ -18,8 +19,5 @@ return {
     -- dap.listeners.before.event_exited["dapui_config"] = function()
     --   dapui.close()
     -- end
-
-    -- NOTE: Make sure to install the needed files/exectubles through mason
-    require "plugins.settings.codelldb"
-   end,
+  end,
 }

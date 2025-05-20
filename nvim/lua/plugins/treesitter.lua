@@ -11,7 +11,6 @@ return {
         "c",
         "cpp",
         "haskell",
-        "python",
         "markdown",
       },
     },
