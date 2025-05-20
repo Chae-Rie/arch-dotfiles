@@ -1,0 +1,18 @@
+# Ignores all files by default 
+*
+
+# Exceptions (whitelist)
+# Don't forget you need to first add the folder then all the subdirs and files with /**
+# --------------------------
+!.gitignore
+!hypr/
+!hypr/**
+
+!kitty/
+!kitty/**
+
+!nvim/
+!nvim/**
+
+!waybar/
+!waybar/**
