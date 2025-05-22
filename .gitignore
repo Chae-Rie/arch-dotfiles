@@ -22,3 +22,6 @@
 
 !dunst/
 !dunst/**
+
+!fastfetch/
+!fastfetch/**
