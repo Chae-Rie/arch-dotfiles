@@ -7,6 +7,7 @@
 !.gitignore
 !hypr/
 !hypr/**
+hypr/wallpapers/*
 
 !kitty/
 !kitty/**
@@ -25,3 +26,8 @@
 
 !fastfetch/
 !fastfetch/**
+
+!nnn/
+!nnn/**
+
+

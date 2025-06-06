@@ -1,6 +1,5 @@
 return {
   "rcarriga/nvim-dap-ui",
-  enabled = false,
   init = function()
     vim.keymap.set(
       "n",

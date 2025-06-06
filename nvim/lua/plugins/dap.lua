@@ -1,6 +1,5 @@
 return {
   "mfussenegger/nvim-dap",
-  enabled = false,
   config = function()
     -- NOTE: Check out this for guide
     -- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
