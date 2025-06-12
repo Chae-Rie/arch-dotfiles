@@ -58,7 +58,7 @@ Kickstart Guide:
 
   Next, run AND READ `:help`.
     This will open up a help window with some basic information
-    about reading, navigating and searching the builtin help documentation.
+    about reading, navigating and searching the builtin help documentation.lotus
 
     This should be the first place you go to look when you're stuck or confused
     with something. It's one of my favorite Neovim features.
@@ -121,6 +121,7 @@ end)
 -- Enable break indent
 vim.o.breakindent = true
 
+vim.o.relativenumber = true
 -- Save undo history
 vim.o.undofile = true
 
@@ -881,20 +882,28 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
+    -- 'folke/tokyonight.nvim',
+    'rebelot/kanagawa.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
+      --- Note by Me: This was already in the kickstart.nvim
       ---@diagnostic disable-next-line: missing-fields
-      require('tokyonight').setup {
-        styles = {
-          comments = { italic = false }, -- Disable italics in comments
-        },
-      }
+      -- require('tokyonight').setup {
+      --   styles = {
+      --     comments = { italic = false }, -- Disable italics in comments
+      --   },
+      -- }
+      -- until HERE!
+
+      -- If you want to make changes to the theme setup or some settings use the following function call
+      -- look here: https://github.com/rebelot/kanagawa.nvim?tab=readme-ov-file#configuration
+      --require('kanagawa').setup {
+      -- }
 
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'kanagawa-wave'
     end,
   },
 
@@ -973,11 +982,11 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
