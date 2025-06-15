@@ -1,14 +1,24 @@
 return {
-  { -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help ibl`
-    main = 'ibl',
-    opts = {
+  'lukas-reineke/indent-blankline.nvim', -- Add indentation guides even on blank lines
+  event = 'BufReadPre',
+  main = 'ibl',
+  config = function()
+    vim.opt.list = true
+    -- vim.opt.listchars:append("space:⋅")
+    -- vim.opt.listchars:append("eol:↴")
+
+    require('ibl').setup {
+      exclude = {
+        filetypes = { 'help', 'dashboard', 'packer', 'NvimTree', 'Trouble', 'TelescopePrompt', 'Float' },
+        buftypes = { 'terminal', 'nofile', 'telescope' },
+      },
       indent = {
         char = '│',
-        tab_char = '│',
       },
-    },
-  },
+      scope = {
+        enabled = true,
+        show_start = false,
+      },
+    }
+  end,
 }
