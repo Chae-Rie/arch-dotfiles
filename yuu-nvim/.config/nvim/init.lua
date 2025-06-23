@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -673,6 +673,7 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         clangd = {},
+        codelldb = {},
         -- gopls = {},
         -- pyright = {},
         rust_analyzer = {},
@@ -851,7 +852,7 @@ require('lazy').setup({
       completion = {
         -- By default, you may press `<c-space>` to show the documentation.
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
-        documentation = { auto_show = false, auto_show_delay_ms = 500 },
+        documentation = { auto_show = true, auto_show_delay_ms = 500 },
       },
 
       sources = {
@@ -994,14 +995,15 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  require 'kickstart.plugins.debug',
-  require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.debug', -- debugger incl. ui
+  require 'kickstart.plugins.indent_line', -- indenting, but smart
   require 'kickstart.plugins.lint', -- read the notes in the lua file if you see some strange errors
-  require 'kickstart.plugins.autopairs',
-  require 'kickstart.plugins.neo-tree',
-  require 'kickstart.plugins.lazygit',
-  require 'kickstart.plugins.toggleterm',
-  require 'kickstart.plugins.smearcursor',
+  require 'kickstart.plugins.autopairs', -- yea, automatic pair of brackets
+  require 'kickstart.plugins.neo-tree', -- filemanager plugin with very neat features
+  require 'kickstart.plugins.lazygit', -- very nice git tool
+  require 'kickstart.plugins.toggleterm', -- handy popout terminal
+  require 'kickstart.plugins.smearcursor', -- fancy cursor animation
+  require 'kickstart.plugins.rustaceanvim', -- a better rust analyzer
 
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
@@ -1035,7 +1037,7 @@ require('lazy').setup({
       lazy = '💤 ',
     },
   },
-})
+}) -- end of setup
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
