@@ -1004,7 +1004,7 @@ require('lazy').setup({
   require 'kickstart.plugins.toggleterm', -- handy popout terminal
   require 'kickstart.plugins.smearcursor', -- fancy cursor animation
   require 'kickstart.plugins.rustaceanvim', -- a better rust analyzer
-
+  require 'kickstart.plugins.cmaketools', -- for working with CMakefiles
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`

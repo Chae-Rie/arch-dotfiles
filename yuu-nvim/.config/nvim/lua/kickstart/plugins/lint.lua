@@ -6,6 +6,9 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = {},
+        --- markdown = { 'vale' },
+        --- Currently no markdown linter beacause I dont need one
+        --- You could add them for other languages below
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
