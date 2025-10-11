@@ -1,3 +1,11 @@
+local function get_shell()
+  if vim.fn.has 'win32' == 1 or vim.fn.has 'win64' == 1 then
+    return 'pwsh.exe'
+  else
+    return '/usr/bin/zsh'
+  end
+end
+
 return {
   'akinsho/toggleterm.nvim',
   version = '*',
@@ -13,5 +21,6 @@ return {
     start_in_insert = true,
     close_on_exit = true,
     persist_size = true,
+    shell = get_shell(),
   },
 }
