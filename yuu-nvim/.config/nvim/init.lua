@@ -996,7 +996,7 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   require 'kickstart.plugins.debug', -- debugger incl. ui
-  require 'kickstart.plugins.indent_line', -- indenting, but smart
+  --  require 'kickstart.plugins.indent_line', -- indenting, but smart
   require 'kickstart.plugins.lint', -- read the notes in the lua file if you see some strange errors
   require 'kickstart.plugins.autopairs', -- yea, automatic pair of brackets
   require 'kickstart.plugins.neo-tree', -- filemanager plugin with very neat features
@@ -1007,7 +1007,8 @@ require('lazy').setup({
   require 'kickstart.plugins.cmaketools', -- for working with CMakefiles
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
   require 'kickstart.plugins.trouble', -- for visually pleasing diagnostics, just like in your avg. IDE
-  require 'kickstart.plugins.markdown_nvim',
+  require 'kickstart.plugins.markdown_nvim', -- better visuals for markdown. So you can modify markdown files more better
+  require 'kickstart.plugins.flash',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
