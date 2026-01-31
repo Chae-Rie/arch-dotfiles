@@ -1024,6 +1024,8 @@ require('lazy').setup({
   require 'kickstart.plugins.flash',
   require 'kickstart.plugins.snacks', -- QoL Plugins
   require 'kickstart.plugins.faster_nvim', -- should better the speed of parsing big files
+  -- require 'kickstart.plugins.precognition',
+  -- require 'kickstart.plugins.hardtime_nvim',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
