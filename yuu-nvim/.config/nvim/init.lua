@@ -1022,7 +1022,7 @@ require('lazy').setup({
   require 'kickstart.plugins.trouble', -- for visually pleasing diagnostics, just like in your avg. IDE
   require 'kickstart.plugins.markdown_nvim', -- better visuals for markdown. So you can modify markdown files more better
   require 'kickstart.plugins.flash',
-  require 'kickstart.plugins',
+  require 'kickstart.plugins.snacks', -- QoL Plugins
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
