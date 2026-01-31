@@ -41,6 +41,8 @@ What is Kickstart?
     - :help lua-guide
     - (or HTML version): https://neovim.io/doc/user/lua-guide.html
 
+
+
 Kickstart Guide:
 
   TODO: The very first thing you should do is to run the command `:Tutor` in Neovim.
@@ -120,6 +122,16 @@ end)
 
 -- Enable break indent
 vim.o.breakindent = true
+
+-- Added..
+vim.o.autoindent = false
+vim.o.smartindent = false
+vim.o.cindent = false
+vim.o.indentexpr = ''
+vim.o.expandtab = true
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.softtabstop = -1
 
 vim.o.relativenumber = true
 -- Save undo history
@@ -248,7 +260,7 @@ rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
+  -- 'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -976,7 +988,8 @@ require('lazy').setup({
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
         additional_vim_regex_highlighting = { 'ruby' },
       },
-      indent = { enable = true, disable = { 'ruby' } },
+      -- indent = { enable = true, disable = { 'ruby', 'c', 'cpp' } },
+      indent = { enable = false },
     },
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:
@@ -1009,6 +1022,7 @@ require('lazy').setup({
   require 'kickstart.plugins.trouble', -- for visually pleasing diagnostics, just like in your avg. IDE
   require 'kickstart.plugins.markdown_nvim', -- better visuals for markdown. So you can modify markdown files more better
   require 'kickstart.plugins.flash',
+  require 'kickstart.plugins',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
