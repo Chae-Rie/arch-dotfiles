@@ -1023,6 +1023,7 @@ require('lazy').setup({
   require 'kickstart.plugins.markdown_nvim', -- better visuals for markdown. So you can modify markdown files more better
   require 'kickstart.plugins.flash',
   require 'kickstart.plugins.snacks', -- QoL Plugins
+  require 'kickstart.plugins.faster_nvim', -- should better the speed of parsing big files
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
