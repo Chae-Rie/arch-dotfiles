@@ -960,15 +960,18 @@ require('lazy').setup({
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
+  -- I disabled the plugin because it crashes on opening markdown files, so I dont really know what I should do
+  -- with it, because I cannot fix it.
   {
     'nvim-treesitter/nvim-treesitter',
+    enabled = false,
     build = ':TSUpdate',
     main = 'nvim-treesitter',
     opts = {
       ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'query', 'vim', 'vimdoc' },
       auto_install = true,
       highlight = {
-        enable = true,
+        enable = false,
         additional_vim_regex_highlighting = { 'ruby' },
       },
       indent = {
@@ -990,7 +993,7 @@ require('lazy').setup({
   --  require 'kickstart.plugins.indent_line', -- indenting, but smart
   require 'kickstart.plugins.lint', -- read the notes in the lua file if you see some strange errors
   require 'kickstart.plugins.autopairs', -- yea, automatic pair of brackets
-  require 'kickstart.plugins.neo-tree', -- filemanager plugin with very neat features
+  -- require 'kickstart.plugins.neo-tree', -- filemanager plugin with very neat features
   require 'kickstart.plugins.lazygit', -- very nice git tool
   require 'kickstart.plugins.toggleterm', -- handy popout terminal
   require 'kickstart.plugins.smearcursor', -- fancy cursor animation

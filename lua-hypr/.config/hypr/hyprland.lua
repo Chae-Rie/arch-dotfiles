@@ -10,14 +10,11 @@
 
 --- Monitor stuff
 require("source.monitors")
-
----
-
----  -------------------------------------------------
---- I definetly need the following:
---- - Program-autostart stuff
---- - Keybindings
---- - Windowrules
---- - Inputs
---- - Looks (pretty stuff)
----
+require("source.inputs")
+require("source.programs")
+require("source.binds")
+require("source.env")
+require("source.looks")
+require("source.misc")
+require("source.permissions")
+require("source.windows_workspaces")

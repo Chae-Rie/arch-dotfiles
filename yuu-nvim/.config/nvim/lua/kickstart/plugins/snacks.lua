@@ -8,6 +8,33 @@ return {
     bigfile = { enabled = true },
     quickfile = { enabled = true },
     statuscolumn = { enabled = true },
-    indent = { enabled = true },
+    indent = { enabled = false },
+    scope = { enabled = false },
+    zen = { enabled = true },
+    picker = { enabled = true },
   },
+  config = function(_, opts)
+    -- Let Snacks apply your config
+    require('snacks').setup(opts)
+
+    -- Define a global :ZenMode command
+    vim.api.nvim_create_user_command('ZenMode', function()
+      Snacks.zen()
+    end, { desc = 'Toggle Snacks zen mode' })
+
+    -- Files picker (replacement for e.g. :Telescope find_files)
+    vim.keymap.set('n', '<leader>ff', function()
+      Snacks.picker.files()
+    end, { desc = 'Snacks: find files' })
+
+    -- Live grep
+    vim.keymap.set('n', '<leader>fg', function()
+      Snacks.picker.grep()
+    end, { desc = 'Snacks: live grep' })
+
+    -- Neo-tree-style file explorer toggle
+    vim.keymap.set('n', '<leader>e', function()
+      Snacks.picker.explorer()
+    end, { desc = 'Snacks: explorer' })
+  end,
 }
