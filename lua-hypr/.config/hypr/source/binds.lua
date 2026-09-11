@@ -39,3 +39,7 @@ for i = 1, 10 do
 	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
+
+-- Resizing window via mouse + alt
+-- FYI: LMB -> 272, RMB -> 273  MMB -> 274
+hl.bind("ALT + mouse:272", hl.dsp.window.resize(), { mouse = true })
